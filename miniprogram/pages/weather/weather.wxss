@@ -1,0 +1,295 @@
+/* pages/weather/weather.wxss */
+page{
+  background: #fff;
+  font-size: 26rpx;
+}
+.lifeIndex-title,.dayForecast-title{
+  font-weight: 600;
+  padding:20rpx 30rpx;
+  font-size:34rpx;
+}
+.lifeIndex-content{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-top:2px solid #e5e5e5;
+}
+.lifeIndex-item{
+  width: 187rpx;
+  height: 185rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2rpx dotted #eee;
+  border-right: 2rpx dotted #eee;
+}
+
+.lifeIndex-item:nth-child(4n){
+  border-right: none;
+}
+.lifeIndex-item-figure{
+  width: 50rpx;
+  height: 50rpx;
+}
+.lifeIndex-item-text{
+  color: #000;
+  font-size: 26rpx;
+  margin-top: 10rpx;
+}
+.lifeIndex-item-tips{
+  color: #999;
+  font-size: 26rpx;
+  margin-top: 5rpx;
+}
+/* 15天预报 */
+.dayForecast-content{
+  border-top: 2px solid #e5e5e5;
+}
+.todayAndTomorrowWeather{
+  background: #f9fcfe;
+  height: 160rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 30rpx;
+  color: #000;
+}
+.tt_content-item{
+  padding: 18rpx 24rpx;
+  position: relative;
+  width: 50%;
+  line-height: 2;
+}
+.tt_content-item::after {
+  content: '';
+  width: 2rpx;
+  height: 80%;
+  position: absolute;
+  left: 100%;
+  top: 10%;
+  background: #dfe2e2;
+}
+.tt_content-item:last-child::after {
+  display: none;
+}
+.flexRowS {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.tt_tag {
+  padding: 0rpx 10rpx;
+  min-width: 53rpx;
+  height: 35rpx;
+  color: #fff;
+  line-height: 35rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  margin-left: 20rpx;
+  font-size: 20rpx;
+}
+.tt_tag_level1{
+  background: #25b185;
+}
+.tt_tag_level2{
+  background: #d7af0e;
+}
+.tt_tag_level3{
+  background: #f39800;
+}
+.tt_tag_level4{
+  background: #e2361a;
+}
+.tt_tag_level5{
+  background: #5f52a0;
+}
+.tt_tag_level6{
+  background: #631541;
+}
+.flexRow{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.tt_figure{
+  width: 50rpx;
+  height: 50rpx;
+}
+
+/* 本地今天天气 */
+.localWeather{
+  height: 830rpx;
+  position: relative;
+  background: linear-gradient(#90c9e9,#b6deee, #d4eff5,#f4fcfc,#fff);
+  padding-top: 60rpx;
+}
+.temperature-big{
+  display: flex;
+  justify-content: center;
+  /* transform: scale(2.5); */
+  margin-top: 20rpx;
+  text-align: center;
+}
+.temperature-num {
+  position: relative;
+  
+  font-size: 300rpx;
+  font-weight: lighter;
+}
+.temperature-num::before{
+  position: absolute;
+  content: '°';
+  top: 45rpx;
+  right: -50rpx;
+  font-size: 120rpx;
+}
+.cloud-text{
+  display: flex;
+  justify-content: center;
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  align-items: center;
+  
+}
+.poster-btn {
+  position: absolute;
+  right: 0;
+  top: 15%;
+  display: flex;
+  flex-direction: row;
+  height: 40rpx;
+  line-height: 40rpx;
+  align-items: center;
+  background: #87b7cc;
+  padding: 5rpx 10rpx;
+  color: #fff;
+  font-size: 26rpx;
+  border-top-left-radius: 10rpx;
+  border-bottom-left-radius: 10rpx;
+}
+.poster-img-box{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 15rpx;
+}
+.poster-img{
+  width: 100%;
+  height: 100%;
+}
+
+.update-tips{
+  text-align: center;
+  font-size: 26rpx;
+  font-weight: 300;
+}
+.localWeather-address{
+  margin: 10rpx auto;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-size: 40rpx;
+}
+.address-img{
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 10rpx;
+}
+.la-img{
+  width: 100%;
+  height: 100%;
+}
+.quality{
+  padding: 5rpx 10rpx;
+  color: #fff;
+  height: 35rpx;
+  line-height: 35rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+}
+.leaf-img{
+  width: 25rpx;
+  height: 25rpx;
+  margin-right: 10rpx;
+}
+.wind_speed{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: #666;
+  font-size: 28rpx;
+  margin: 40rpx 0;
+}
+.rain-situation{
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  font-weight: lighter;
+  background: linear-gradient(to right,#fff,#e3f1f5,#e3f1f5, #e0edf0,#e3f1f5,#e3f1f5,#fff);
+}
+.sun-time{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  font-size: 30rpx;
+  font-weight: 300;
+  border-bottom: 2px solid #eee;
+  padding: 10rpx 0;
+}
+.sunrise-box,.sunset-box{
+  display: flex;
+  align-items: center;
+  margin-right: 15rpx;
+}
+
+.hourForecast-item{
+  min-width: 140rpx;
+  height: 220rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color:#949494;
+  margin-right: 20rpx;
+  padding: 0 10rpx;
+}
+.hourForecast-item-picture{
+  width: 50rpx;
+  height: 50rpx;
+  margin: 10rpx 0;
+}
+.hi-picture-img{
+  width: 100%;
+  height: 100%;
+}
+.hourForecast-box{
+  display: flex;
+  flex-direction: row;
+}
+.day7Forecast{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20rpx;
+}
+.day7Forecast-item{
+  display: flex;
+  height: 95rpx;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  border-bottom:1rpx solid #eee;
+  
+}
+.day7Forecast-item-picture{
+  width: 50rpx;
+  height: 50rpx;
+}
+.day7Forecast-item-text{
+  min-width: 200rpx;
+}

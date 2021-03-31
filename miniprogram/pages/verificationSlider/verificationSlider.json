@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "verification-slider": "verification-slider/verification-slider",
+    "verification-code": "verification-code/verification-code",
+    "verification-puzzle":"verification-puzzle/verification-puzzle"
+  }
+}

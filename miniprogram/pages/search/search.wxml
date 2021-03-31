@@ -1,0 +1,35 @@
+<!--pages/search/search.wxml-->
+<view class="weui-search-bar">
+  <view class="weui-search-bar__form">
+    <!-- 搜索框 -->
+    <view class="weui-search-bar__box">
+      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      <input value="{{value}}" type="text" class="weui-search-bar__input" placeholder-class="placeClass" placeholder="请输入城市名，快速查询天气信息" bindinput="bindValue"  />
+      <icon class="weui-icon-search_in-box1" type="cancel" size="14" color="#333" bindtap="bindDel"></icon>
+    </view>
+  </view>
+  <!-- 搜索按钮,调用搜索查询方法 -->
+  <view class="weui-search-bar__cancel-btn" bindtap="bindCancel">取消</view>
+</view>
+<view wx:if="{{results.length==0}}">
+  <view class="city-title">猜你想找</view>
+  <view class="city-list">
+    <view bindtap="bindCityItem" data-id="0" class="city-item active">定位</view>
+    <view bindtap="bindCityItem" data-id="1" class="city-item">北京市</view>
+    <view bindtap="bindCityItem" data-id="2" class="city-item">广州市</view>
+    <view bindtap="bindCityItem" data-id="3" class="city-item">深圳市</view>
+    <view bindtap="bindCityItem" data-id="4" class="city-item">上海市</view>
+    <view bindtap="bindCityItem" data-id="5" class="city-item">南京市</view>
+    <view bindtap="bindCityItem" data-id="6" class="city-item">杭州市</view>
+    <view bindtap="bindCityItem" data-id="7" class="city-item">武汉市</view>
+  </view>
+  
+</view>
+<view class="results" >
+  <block wx:for="{{results}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+    <view class="results-item" bindtap="bindItem" data-id="{{item.id}}" data-name="{{item.name}}" >
+      {{item.path}}
+    </view>
+  </block>
+ 
+</view>

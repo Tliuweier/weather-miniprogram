@@ -1,0 +1,52 @@
+/* pages/echartView/echartView.wxss */
+.view-title{
+  color: #4a4a4a;
+  font-size: 46rpx;
+  margin-bottom: 15rpx;
+  margin-left: 20rpx;
+}
+.fifteen-list{
+  font-size: 24rpx;
+  padding-left: 20rpx;
+  height: 779rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.fifteen-item{
+  min-width: 115rpx;
+  display: flex;
+  flex-direction: column;
+
+}
+.item-image{
+  width: 40rpx;
+  height: 40rpx;
+  margin: 10rpx 0;
+}
+.fifteen-night,.fifteen-light{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 252rpx;
+}
+.light-text,.night-text{
+  font-size: 24rpx;
+  color: #6a6a6a;
+  margin-top: 10rpx;
+}
+.active{
+  background: #fafafa;
+  color: #4796e4;
+}
+.fifteen-night{
+  padding-top: 280rpx;
+}
+.fifteen-chart{
+  position: absolute;
+  top: 35%;
+}
+.fifteen-scroll{
+  position: relative;
+}

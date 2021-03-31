@@ -1,0 +1,97 @@
+/* pages/search/search.wxss */
+page{
+  background:#fff;
+}
+.weui-search-bar {
+  position: relative;
+  padding: 8px 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #D7D6DC;
+}
+.weui-icon-search_in-box {
+  position: absolute;
+  left: 10px;
+  top: 7px;
+  
+}
+.weui-icon-search_in-box1{
+  position: absolute;
+  right: 10px;
+  top: 7px;
+}
+.weui-search-bar__form {
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: auto;
+          flex: auto;
+  border-radius: 5px;
+  background: #FFFFFF;
+  border: 1rpx solid #E6E6EA;
+}
+.weui-search-bar__box {
+  position: relative;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+.weui-search-bar__input {
+  
+  height: 28px;
+  line-height: 28px;
+  font-size: 28rpx;
+  background: #f2f2f2;
+}
+.weui-search-bar__cancel-btn {
+  margin-left: 10px;
+  line-height: 28px;
+  color: #09BB07;
+  white-space: nowrap;
+}
+.placeClass{
+  font-size: 28rpx;
+  color: #8e8e8e;
+}
+.results{
+  display: flex;
+  flex-direction: column;
+
+}
+.results-item{
+  border-bottom: 1rpx solid #eee;
+  padding: 20rpx;
+  font-size: 30rpx;
+}
+.city-title{
+  padding-left: 29rpx;
+  margin: 50rpx 0 24rpx 0;
+}
+.city-list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 29rpx;
+}
+
+.city-item{
+  width: 220rpx;
+  height: 60rpx;
+  margin-right: 14rpx;
+  margin-bottom: 20rpx;
+  line-height: 60rpx;
+  background: #f2f2f2;
+  color: #6e6e6e;
+  font-size: 30rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}
+.active{
+  color: #fff;
+  background: #4394eb;
+}

@@ -1,0 +1,25 @@
+<view class="verificationPuzzleContainer">
+  <view class="view-z-container">
+    <canvas class="canvas-shadow" style="width:250px;height:150px;" disable-scroll="true" bindtouchstart="uploadScaleStart" bindtouchmove="uploadScaleMove" bindtouchend="uploadScaleEnd" bindtap="mouseDown" canvas-id="canvasShadow">
+    </canvas>
+    <canvas class="canvas-puzzle" style="width:250px;height:150px;" disable-scroll="true" bindtouchstart="uploadScaleStart" bindtouchmove="uploadScaleMove" bindtouchend="uploadScaleEnd" bindtap="mouseDown" canvas-id="canvasPuzzle">
+    </canvas>
+    <cover-image style="width:250px;height:150px;z-index:53;position: fixed;" src="{{oriSrc}}"></cover-image>
+    <cover-image style="width:250px;height:150px;z-index:53;position: fixed;" src="{{imgShadow}}"></cover-image>
+    <cover-image style="width:250px;height:150px;z-index:53;position: fixed;transform:translateX({{translateX}}px);" src="{{imgPuzzle}}"></cover-image>
+  </view>
+  <view wx:if="{{!isOk}}" class='pathway' style="width:250px;height:40px;margin-top:10rpx" bindtouchend='onEnd' id='pathway'>
+    <view class="tips">
+      <text wx:if="{{isOk}}" style="color: #FFFFFF;">验证通过</text>
+      <text wx:else>拖动滑块拼图验证</text>
+    </view>
+    <view class="track" style="transform:translateX({{oldx}}px)"></view>
+    <movable-area>
+      <movable-view x="{{x}}" direction="horizontal" bindchange="onChange" class='{{isOk ? "active":""}}' id="track">
+      </movable-view>
+    </movable-area>
+    <view class="disabled" wx:if="{{isOk}}"></view>
+  </view>
+  <view wx:if="{{isOk}}" style="width:250px;height:40px;margin-top:10rpx;background-color:#7ac23c;color:#FFFFFF;display: flex;flex-direction: column;justify-content: center;align-items: center;font-size: 32rpx;">拼图验证成功
+  </view>
+</view>

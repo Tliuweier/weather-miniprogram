@@ -1,0 +1,148 @@
+<!--pages/weather/weather.wxml-->
+<wxs src="../../util/utilFun.wxs" module="foo" />
+<view class="localWeather">
+  <view class="localWeather-address" bindtap="bindSearch">
+    <view class="address-img">
+      <image class="la-img" src="../../images/position.png"></image>
+    </view>{{locationString}}
+  </view>
+  <view class="update-tips">更新成功 {{foo.getTimeString(last_update)}}发布</view>
+  <view class="temperature-big">
+    <view class="temperature-num">{{now.temperature}}</view>
+  </view>
+  <view class="cloud-text flexRow">
+    {{now.text}}｜<view bindtap="bindAirQuality" class="quality {{foo.getLevelClassName(air.city.quality)}}">
+      <image class="leaf-img" src="{{foo.getQualityIcon(air.city.quality)}}"></image>
+      {{air.city.aqi}} {{air.city.quality}}
+    </view>
+  </view>
+  <view class="wind_speed">
+    <view style="margin-left:30rpx">风力{{now.wind_scale}}级</view>
+    <view style="margin-left:30rpx">湿度{{now.humidity}}%</view>
+    <view style="margin-left:30rpx">气压{{now.pressure}}hPa</view>
+  </view>
+  <view class="rain-situation">{{description}}</view>
+</view>
+<!-- 7天预报 -->
+<!-- <view class="todayAndTomorrowWeather">
+  <wxs src="../../util/utilFun.wxs" module="foo" />
+  <block wx:for="{{daily}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+    <view class="tt_content-item">
+      <view class="flexRowS">
+        <view class="flexRow">{{foo.getTimeText(item.date)}}<view
+            class="tt_tag {{foo.getLevelClassName(item.quality)}}">{{item.quality}}</view>
+        </view>
+        <view>{{item.high}}°/{{item.low}}°</view>
+      </view>
+      <view class="flexRowS">
+        <view>{{item.text_day}}</view>
+        <image class="tt_figure" mode="aspectFit" src="{{foo.getImgUrl(item.code_day)}}"></image>
+      </view>
+    </view>
+  </block>
+</view> -->
+
+
+<!-- 24小时预报 -->
+<view class="hourForecast">
+  <!-- 日落和日出 -->
+  <view class="sun-time">
+    <view class="sunrise-box">
+      <image style="width:40rpx;height:40rpx;margin-right:10rpx;" src="../../images/sunrise.png"></image>
+      {{sun[0].sunrise}}
+    </view>
+    <view class="sunset-box">
+      <image style="width:40rpx;height:40rpx;margin-right:10rpx;" src="../../images/sunset.png"></image>
+      {{sun[0].sunset}}
+    </view>
+  </view>
+  <scroll-view scroll-x="true">
+    <view class="hourForecast-box">
+      <block wx:for="{{hourly}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+        <view class="hourForecast-item">
+        <view>{{foo.getHoursString(item.time)}}</view>
+
+        <view class="hourForecast-item-picture">
+          <image class="hi-picture-img" mode="widthFix" src="{{foo.getImgUrl(item.code)}}"></image>
+        </view>
+        <view>{{item.text}}</view>
+        <view>{{item.temperature}}°C</view>
+      </view>
+      </block>
+      
+      
+      
+    </view>
+  </scroll-view>
+
+</view>
+<!-- 7天预报 -->
+<view class="day7Forecast">
+  <block wx:for="{{daily}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+    <view class="day7Forecast-item">
+    <view class="day7Forecast-item-text">{{foo.getDayString(item.date)}}</view>
+   
+    <image class="day7Forecast-item-picture" mode="widthFix" src="{{foo.getImgUrl(item.code_day)}}"></image>
+   
+    <view>{{item.high}}°C/{{item.low}}°C</view>
+  </view>
+  </block>
+  
+  <view class="day7Forecast-item" bindtap="bindEchartView">
+    <view>查看多天预报></view>
+  </view>
+</view>
+<!-- 15天预报 -->
+<!-- <view class="dayForecast">
+  <view class="dayForecast-title">
+    15天预报
+  </view>
+  <view class="dayForecast-content">
+    <cover-view>
+      <ec-canvas id="mychart15" class="mycanvas" canvas-id="mychart-bar" force-use-old-canvas="true" ec="{{ec}}"></ec-canvas>
+    </cover-view>
+  </view>
+</view> -->
+<!-- 生活指数 -->
+<view class="lifeIndex">
+  <view class="lifeIndex-title">生活指数</view>
+  <view class="lifeIndex-content">
+    <view class="lifeIndex-item">
+      <image class="lifeIndex-item-figure" src="../../images/yaowan.png"></image>
+      <view class="lifeIndex-item-text">{{lifeIndexInfo.flu}}</view>
+      <view class="lifeIndex-item-tips">感冒</view>
+    </view>
+    <view class="lifeIndex-item">
+      <image class="lifeIndex-item-figure" src="../../images/xiche.png"></image>
+      <view class="lifeIndex-item-text">{{lifeIndexInfo.car_washing}}</view>
+      <view class="lifeIndex-item-tips">洗车</view>
+    </view>
+    <view class="lifeIndex-item">
+      <image class="lifeIndex-item-figure" src="../../images/yifu.png"></image>
+      <view class="lifeIndex-item-text">{{lifeIndexInfo.dressing}}</view>
+      <view class="lifeIndex-item-tips">穿衣</view>
+    </view>
+    <view class="lifeIndex-item">
+      <image class="lifeIndex-item-figure" src="../../images/taiyang.png"></image>
+      <view class="lifeIndex-item-text">{{lifeIndexInfo.uv}}</view>
+      <view class="lifeIndex-item-tips">紫外线</view>
+    </view>
+    <view class="lifeIndex-item">
+      <image class="lifeIndex-item-figure" src="../../images/yundong.png"></image>
+      <view class="lifeIndex-item-text">{{lifeIndexInfo.sport}}</view>
+      <view class="lifeIndex-item-tips">运动</view>
+    </view>
+    <view class="lifeIndex-item">
+      <image class="lifeIndex-item-figure" src="../../images/yu.png"></image>
+      <view class="lifeIndex-item-text">{{lifeIndexInfo.fishing}}</view>
+      <view class="lifeIndex-item-tips">钓鱼</view>
+    </view>
+  </view>
+</view>
+<view style="margin:20rpx;text-align:center;font-size:22rpx;color:#6a6a6a;">部分气象数据来源 心知天气</view>
+<!-- <view class="poster-btn">
+  <view class="poster-img-box">
+    <image class="poster-img" src="../../images/poster.png"></image>
+  </view>
+  海报
+</view> -->

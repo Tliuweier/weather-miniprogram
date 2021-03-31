@@ -1,0 +1,317 @@
+var getTimeText = function(date){
+  var d = getDate(date).setHours(0,0,0,0)
+  var today = getDate().setHours(0,0,0,0)
+  var text = ''
+  if(d-today == 0 ){
+    text = '今天'
+  }else if(d-today == 86400000){
+    text = '明天'
+  }
+  return text;
+}
+var isToday = function(date){
+  var d = getDate(date).setHours(0,0,0,0)
+  var today = getDate().setHours(0,0,0,0)
+  var text = ''
+  if(d-today == 0 ){
+    text = 'active'
+  }
+  return text;
+}
+var getDayString =  function(date){
+  var d = getDate(date).setHours(0,0,0,0)
+  var today = getDate().setHours(0,0,0,0)
+  var days  = getDate(date).getDay()
+  var month = getDate(date).getMonth();
+  var dates = getDate(date).getDate()
+  var text = ''
+  if(d-today == 0 ){
+    text = '今天'
+  }else if(d-today == 86400000){
+    text = '明天'
+  }else if(d-today == -86400000){
+    text = '昨天'
+  }else{
+    switch(days) {
+      case 1:
+        text = '星期一';
+        break;
+      case 2:
+        text = '星期二';
+        break;
+      case 3:
+        text = '星期三';
+        break;
+      case 4:
+        text = '星期四';
+        break;
+      case 5:
+        text = '星期五';
+        break;
+      case 6:
+        text = '星期六';
+        break;
+      case 0:
+        text = '星期日';
+        break;
+    }
+  }
+  return (month+1)+'月'+dates+'日  '+text;
+}
+var getLevelClassName = function(quality){
+  var text = ''
+  if(quality == '优'){
+    text = 'tt_tag_level1'
+  }else if(quality == '良'){
+    text = 'tt_tag_level2'
+  }else if(quality == '轻度污染'){
+    text = 'tt_tag_level3'
+  }else if(quality == '中度污染'){
+    text = 'tt_tag_level4'
+  }else if(quality == '重度污染'){
+    text = 'tt_tag_level5'
+  }else if(quality == '严重污染'){
+    text = 'tt_tag_level6'
+  }
+  return text;
+}
+var getQualityIcon = function(quality){
+  var text = ''
+  if(quality == '优'){
+    text = '../../images/leaf.png';
+  }else if(quality == '良'){
+    text = '../../images/leaf.png'
+  }else if(quality == '轻度污染'){
+    text = '../../images/kouzhao.png'
+  }else if(quality == '中度污染'){
+    text = '../../images/kouzhao.png'
+  }else if(quality == '重度污染'){
+    text = '../../images/gutou.png'
+  }else if(quality == '严重污染'){
+    text = '../../images/gutou.png'
+  }
+  return text;
+}
+var getImgUrl = function(code){
+  var text = ''
+  if(code == '0'){
+    text = '../../images/black/0@2x.png  '
+  }else if(code == '1'){
+    text = '../../images/black/1@2x.png  '
+  }else if(code == '2'){
+    text = '../../images/black/2@2x.png  '
+  }else if(code == '3'){
+    text = '../../images/black/3@2x.png  '
+  }else if(code == '4'){
+    text = '../../images/black/4@2x.png  '
+  }else if(code == '5'){
+    text = '../../images/black/5@2x.png  '
+  }else if(code == '6'){
+    text = '../../images/black/6@2x.png  '
+  }else if(code == '7'){
+    text = '../../images/black/7@2x.png  '
+  }else if(code == '8'){
+    text = '../../images/black/8@2x.png  '
+  }else if(code == '9'){
+    text = '../../images/black/9@2x.png  '
+  }else if(code == '10'){
+    text = '../../images/black/10@2x.png  '
+  }else if(code == '11'){
+    text = '../../images/black/11@2x.png  '
+  }else if(code == '12'){
+    text = '../../images/black/12@2x.png  '
+  }else if(code == '13'){
+    text = '../../images/black/13@2x.png  '
+  }else if(code == '14'){
+    text = '../../images/black/14@2x.png  '
+  }else if(code == '15'){
+    text = '../../images/black/15@2x.png  '
+  }else if(code == '16'){
+    text = '../../images/black/16@2x.png  '
+  }else if(code == '17'){
+    text = '../../images/black/17@2x.png  '
+  }else if(code == '18'){
+    text = '../../images/black/18@2x.png  '
+  }else if(code == '19'){
+    text = '../../images/black/19@2x.png  '
+  }else if(code == '20'){
+    text = '../../images/black/20@2x.png  '
+  }else if(code == '21'){
+    text = '../../images/black/21@2x.png  '
+  }else if(code == '22'){
+    text = '../../images/black/22@2x.png  '
+  }else if(code == '23'){
+    text = '../../images/black/23@2x.png  '
+  }else if(code == '24'){
+    text = '../../images/black/24@2x.png  '
+  }else if(code == '25'){
+    text = '../../images/black/25@2x.png  '
+  }else if(code == '26'){
+    text = '../../images/black/26@2x.png  '
+  }else if(code == '27'){
+    text = '../../images/black/27@2x.png  '
+  }else if(code == '28'){
+    text = '../../images/black/28@2x.png  '
+  }else if(code == '29'){
+    text = '../../images/black/29@2x.png  '
+  }else if(code == '30'){
+    text = '../../images/black/30@2x.png  '
+  }else if(code == '31'){
+    text = '../../images/black/31@2x.png  '
+  }else if(code == '32'){
+    text = '../../images/black/32@2x.png  '
+  }else if(code == '33'){
+    text = '../../images/black/33@2x.png  '
+  }else if(code == '34'){
+    text = '../../images/black/34@2x.png  '
+  }else if(code == '35'){
+    text = '../../images/black/35@2x.png  '
+  }else if(code == '36'){
+    text = '../../images/black/36@2x.png  '
+  }else if(code == '37'){
+    text = '../../images/black/37@2x.png  '
+  }else if(code == '38'){
+    text = '../../images/black/38@2x.png  '
+  }else if(code == '99'){
+    text = '../../images/black/99@2x.png  '
+  }
+  return text;
+}
+var getTimeString = function(date){
+  // console.log(date)
+  var b = getDate(date).getTime()
+  var result;
+  var minute = 1000 * 60;
+  var hour = minute * 60;
+  var day = hour * 24;
+  var halfamonth = day * 15;
+  var month = day * 30;
+  var now = getDate().getTime();
+  var diffValue = now - b;
+  if (diffValue < 0) {
+    return ;
+  }
+  var monthC = diffValue / month;
+  var weekC = diffValue / (7 * day);
+  var dayC = diffValue / day;
+  var hourC = diffValue / hour;
+  var minC = diffValue / minute;
+  if (monthC >= 1) {
+    if (monthC <= 12)
+      result = "" + parseInt(monthC) + "月前";
+    else {
+      result = "" + parseInt(monthC / 12) + "年前";
+    }
+  } else if (weekC >= 1) {
+    result = "" + parseInt(weekC) + "周前";
+  } else if (dayC >= 1) {
+    result = "" + parseInt(dayC) + "天前";
+  } else if (hourC >= 1) {
+    result = "" + parseInt(hourC) + "小时前";
+  } else if (minC >= 1) {
+    result = "" + parseInt(minC) + "分钟前";
+  } else {
+    result = "刚刚";
+  }
+  return result;
+}
+var getHoursString = function(date){
+  var hour  = getDate(date).getHours()
+  var text = ''
+  if(hour==0 || hour==23){
+    text = '半夜 '+hour+':00'
+  }else if(hour>=1 && hour<=4){
+    text = '凌晨 '+hour+':00'
+  }else if(hour>=5 && hour<=6){
+    text = '清晨 '+hour+':00'
+  }else if(hour>=7 && hour<=8){
+    text = '早上 '+hour+':00'
+  }else if(hour>=9 && hour<=10){
+    text = '上午 '+hour+':00'
+  }else if(hour>=11 && hour<=12){
+    text = '中午 '+hour+':00'
+  }else if(hour>=13 && hour<=16){
+    text = '下午 '+hour+':00'
+  }else if(hour>=17 && hour<=18){
+    text = '傍晚 '+hour+':00'
+  }else if(hour>=19 && hour<=22){
+    text = '晚上 '+hour+':00'
+  }
+  return text;
+}
+var getMonthDay = function(date){
+  var month = getDate(date).getMonth();
+  var dates = getDate(date).getDate()
+  if(month<10){
+    month = '0'+(month+1)
+  }else{
+    month = (month+1)
+  }
+  if(dates<10){
+    dates = '0'+(dates+1)
+  }else{
+    dates = (dates+1)
+  }
+  return month+'/'+dates;
+}
+var getDayStringNotMonthDay =  function(date){
+  var d = getDate(date).setHours(0,0,0,0)
+  var today = getDate().setHours(0,0,0,0)
+  var days  = getDate(date).getDay()
+  var text = ''
+  if(d-today == 0 ){
+    text = '今天'
+  }else if(d-today == 86400000){
+    text = '明天'
+  }else if(d-today == -86400000){
+    text = '昨天'
+  }else{
+    switch(days) {
+      case 1:
+        text = '星期一';
+        break;
+      case 2:
+        text = '星期二';
+        break;
+      case 3:
+        text = '星期三';
+        break;
+      case 4:
+        text = '星期四';
+        break;
+      case 5:
+        text = '星期五';
+        break;
+      case 6:
+        text = '星期六';
+        break;
+      case 0:
+        text = '星期日';
+        break;
+    }
+  }
+  return text;
+}
+var getTimeString1 = function(date){
+  var hour = getDate(date).getHours();
+  var min = getDate(date).getMinutes()
+  if(min<10){
+    min = '0'+min
+  }else{
+    min = min
+  }
+  return hour+':'+min 
+}
+module.exports = {
+  getTimeText:getTimeText,
+  getLevelClassName:getLevelClassName,
+  getImgUrl:getImgUrl,
+  getTimeString:getTimeString,
+  getHoursString:getHoursString,
+  getDayString:getDayString,
+  getQualityIcon:getQualityIcon,
+  isToday:isToday,
+  getMonthDay:getMonthDay,
+  getDayStringNotMonthDay:getDayStringNotMonthDay,
+  getTimeString1:getTimeString1
+}

@@ -1,0 +1,14 @@
+<view class="container">
+  <view class="view-row" style="color:#aaa;font-size:36rpx;margin:30rpx;border-bottom:1rpx solid #aaa;padding:10rpx">自定义系列-安全验证</view>
+  <view style="font-size:32rpx;color:#aaa">滑块、输入、拼图验证</view>
+  <view style="display: flex;flex-direction: column;justify-content: center;align-items: center;margin-top:50rpx">
+  <verification-slider width="500rpx" height="80rpx" bind:result="verifyResult"></verification-slider>
+  </view>
+  <view style="width:150px;margin-top:50rpx;display: flex;flex-direction: column;justify-content: center;align-items: center;">
+    <verification-code width="100" height="36" bind:result="showVerificationCode"></verification-code>
+    <view>{{verificationCode}}</view>
+  </view>
+  <view style="display: flex;flex-direction: column;justify-content: center;align-items: center;margin-top:50rpx">
+  <verification-puzzle bind:result="verifyResult"></verification-puzzle>
+  </view>
+</view>

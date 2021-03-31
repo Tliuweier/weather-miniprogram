@@ -1,0 +1,24 @@
+
+<cover-view style="width:{{menuButtonBoundingClientRect.height+20}}px;height:{{menuButtonBoundingClientRect.height-1}}px ;position: fixed;z-index: 3000;opacity:0.5;border-radius:{{menuButtonBoundingClientRect.height/2}}px;border:1rpx solid #ededed;top:{{menuButtonBoundingClientRect.top}}px;left:{{systemInfo.windowWidth-menuButtonBoundingClientRect.right}}px" hover-class="hover-home" class="home" hover-start-time="20" hover-stay-time="70" bindtap="go2Home">
+</cover-view>
+<cover-image style="position: fixed;z-index: 3001;width:{{menuButtonBoundingClientRect.height-10}}px;height:{{menuButtonBoundingClientRect.height-10}}px;top:{{menuButtonBoundingClientRect.top+5}}px;left:{{systemInfo.windowWidth-menuButtonBoundingClientRect.right+15}}px"  src="../navigationBar/utils/home.png" bindtap="go2Home"></cover-image>
+<view class="container">
+  <canvas canvas-id="puzzleCanvas" style="width:{{cameraInfo.width}}px;height:{{cameraInfo.height}}px;position:absolute;left:-999999px"></canvas>
+  <camera device-position="{{devicePosition}}" flash="off" binderror="error" style="width:100%;height:{{systemInfo.windowHeight}}px;"></camera>
+  <cover-view class="frame-container">
+    <cover-view style="width:100%;height:{{cameraInfo.top}}px;background:black">
+    </cover-view>
+    <cover-image style="width:{{cameraInfo.width}}px;height:{{cameraInfo.height}}px;" src="{{frameImageInfo.path}}"></cover-image>
+    <cover-view style="width:100%;height:{{cameraInfo.top}}px;background:black"></cover-view>
+  </cover-view>
+  <cover-view class="control-container">
+
+  </cover-view>
+  <cover-view style="display: flex;flex-direction: row;justify-content: center;align-items: center;width:130rpx;height:130rpx;border:15rpx solid white;border-radius:80rpx;position:fixed;z-index:2001;bottom:20rpx">
+    <cover-view class="control-takePhoto" hover-class="control-takePhoto-hover" hover-start-time="20" hover-stay-time="70" style="display: flex;flex-direction: row;justify-content: center;align-items: center;background:white;" bindtap="takePhoto">
+    </cover-view>
+    
+  </cover-view>
+
+    <cover-image class="control-switch" src="./switch.png" bindtap="switchCamera"></cover-image>
+</view>

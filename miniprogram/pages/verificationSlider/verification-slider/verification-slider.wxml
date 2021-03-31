@@ -1,0 +1,15 @@
+<view class='pathway' style="width:{{width}};height:{{height}}" bindtouchend='onEnd' id='pathway'>
+    <view class="tips">
+        <text wx:if="{{isOk}}" style="color: #FFFFFF;">验证通过</text>
+        <text wx:else>拖动滑块验证</text>
+    </view>
+    <view class="track" style="transform:translateX({{oldx}}px)"></view>
+    <movable-area>
+        <movable-view x="{{x}}"  direction="horizontal" 
+            bindchange="onChange"  
+            class='{{isOk ? "active":""}}' 
+            id="track">
+        </movable-view>
+    </movable-area>
+    <view class="disabled" wx:if="{{isOk}}"></view>
+</view>

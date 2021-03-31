@@ -1,0 +1,28 @@
+<wxs src="../../util/utilFun.wxs" module="foo" />
+<view class="view-title">15天趋势预报</view>
+<scroll-view scroll-x="true" class="fifteen-scroll">
+  <view class="fifteen-list">
+    <block wx:for="{{daily}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+      <view class="fifteen-item forecastWidth {{foo.isToday(item.date)}}">
+      <view class="fifteen-light">
+        <view class="light-text">{{foo.getDayStringNotMonthDay(item.date)}}</view>
+        <view class="light-text" >{{foo.getMonthDay(item.date)}}</view>
+        <image class="item-image" mode="widthFix" src="{{foo.getImgUrl(item.code_day)}}"></image>
+        <view class="light-text">{{item.text_day}}</view>
+      </view>
+      <view class="fifteen-night">
+        <image class="item-image" mode="widthFix" src="{{foo.getImgUrl(item.code_night)}}"></image>
+        <view class="night-text">{{item.text_night}}</view>
+        <view class="night-text">风力{{item.wind_scale}}级</view>
+      </view>
+    </view>
+    </block>
+    
+    
+  </view>
+  <view class="fifteen-chart" style="width:{{canvasWidth15}}px;height:220rpx;left:30rpx;">
+    <ec-canvas  style="width:{{canvasWidth15}}px;height:220rpx;" id="mychart15" canvas-id="mychart-line" ec="{{ ec }}">
+
+    </ec-canvas>
+  </view>
+</scroll-view>

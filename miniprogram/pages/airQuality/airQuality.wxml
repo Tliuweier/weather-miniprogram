@@ -1,0 +1,51 @@
+<!--pages/air.cityQuality/air.cityQuality.wxml-->
+<wxs src="../../util/utilFun.wxs" module="foo" />
+<view class="airQuality-content">
+  <view class="aqc-title">空气质量</view>
+  <view class="aqc-location">{{locationName}}  {{foo.getTimeString1(last_update)}} 发布</view>
+  <view class="aqc-clearfix {{foo.getLevelClassName(air.city.quality)}}">{{air.city.aqi}} <text style="font-size:28rpx;">{{air.city.quality}}</text></view>
+  <view class="aqc-tips">空气质量可以接受，可能对少数异常敏感的人群健康有较弱的影响</view>
+  <view class="aqc-list">
+    <view class="aqc-item">
+      <view class="green-text">{{air.city.pm25}}</view>
+      <view>PM2.5</view>
+    </view>
+    <view class="aqc-item">
+      <view class="green-text">{{air.city.pm10}}</view>
+      <view>PM10</view>
+    </view>
+    <view class="aqc-item">
+      <view class="green-text">{{air.city.so2}}</view>
+      <view>SO<text style="font-size:16rpx;">2</text></view>
+    </view>
+    <view class="aqc-item">
+      <view class="green-text">{{air.city.no2}}</view>
+      <view>NO<text style="font-size:16rpx;">2</text></view>
+    </view>
+
+    <view class="aqc-item">
+      <view class="green-text">{{air.city.o3}}</view>
+      <view>O<text style="font-size:16rpx;">3</text></view>
+    </view>
+    <view class="aqc-item">
+      <view class="green-text">{{air.city.co}}</view>
+      <view>CO</view>
+    </view>
+  </view>
+</view>
+<view class="hour-title">24小时空气质量预报</view>
+<scroll-view scroll-x="true" class="fifteen-scroll">
+  <view class="datelist" style="width:2300rpx;">
+    <block wx:for="{{date}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+      <view class="dateItem">
+        <view>{{item}}</view>
+    </view>
+    </block>
+    
+  </view>
+  <view class="fifteen-chart" style="width:2300rpx;height:150px;left:20rpx;">
+    <ec-canvas  style="width:2400rpx;height:150px;" id="mychart15" canvas-id="mychart-line" ec="{{ ec }}">
+
+    </ec-canvas>
+  </view>
+</scroll-view>

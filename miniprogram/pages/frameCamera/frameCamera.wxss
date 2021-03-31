@@ -1,0 +1,42 @@
+page{
+  background: black
+}
+.frame-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position:fixed;
+  z-index:1000;
+}
+
+.control-container{
+  width: 100%;
+  height: 200rpx;
+  position:fixed;
+  z-index:2000;
+  bottom: 0;
+  background: black;
+  opacity: 0.6
+}
+.control-takePhoto{
+  width:120rpx;height:120rpx;border-radius:60rpx;
+}
+.control-takePhoto-hover{
+  width:110rpx;height:110rpx;border-radius:55rpx;
+}
+.control-switch{
+  width:80rpx;height:80rpx;
+  position:fixed;
+  z-index:2000;
+  bottom: 60rpx;
+  right: 60rpx;
+}
+
+.home{
+  background: white
+}
+.hover-home{
+  background: #ededed
+}
